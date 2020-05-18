@@ -49,6 +49,7 @@ height: 100px;"
         function attack1() {
             if (turn == 1) {
             health2 -= dmg1;
+            document.getElementById('ehistory').innerHTML +="Player attack for "+ dmg1 +"!<br></br>"
             ftick();
             sjekkhealth();
             turn = 2;
@@ -61,6 +62,7 @@ height: 100px;"
             fireballtick1 += 1;
             mana1 -=100;
             turn = 2;
+            document.getElementById('ehistory').innerHTML +="Player threw a fireball ticking for "+ fireballtick1 +" damage!<br></br>"
             showstat();
             ftick();
             sjekkhealth();
@@ -72,7 +74,7 @@ height: 100px;"
             fireballtick2 += 1;
             mana2 -=100;
             turn = 1;
-            document.getElementById('ehistory').innerHTML +="Threw a fireball ticking for "+ fireballtick2 +" damage!<br></br>"
+            document.getElementById('ehistory').innerHTML +="Enemy threw a fireball ticking for "+ fireballtick2 +" damage!<br></br>"
             showstat();
             ftick();
             sjekkhealth();
@@ -94,6 +96,7 @@ height: 100px;"
         function channel1() {
             mana1 += flow;
             turn = 2;
+            document.getElementById('ehistory').innerHTML +="Player gained "+ flow +" Mana!<br></br>"
             ftick();
             sjekkhealth();
             eattack();
@@ -107,11 +110,11 @@ height: 100px;"
             if (epat == 1) {
             health1 -= edmg;
             sjekkhealth();
-            document.getElementById('ehistory').innerHTML +="Attack for "+ edmg +"!<br></br>"
+            document.getElementById('ehistory').innerHTML +="Enemy attack for "+ edmg +"!<br></br>"
             turn = 1;
         } else if (epat == 2) {
             mana2 +=flow;
-            document.getElementById('ehistory').innerHTML +="Gained "+ flow +" Mana!<br></br>"
+            document.getElementById('ehistory').innerHTML +="Enemy gained "+ flow +" Mana!<br></br>"
             sjekkhealth();
             turn = 1;
         } else if (epat == 3 && mana2 >= 100) {
